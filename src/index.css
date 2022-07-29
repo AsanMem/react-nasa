@@ -1,13 +1,49 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: Impact,-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('../public/img/zemlia_planeta_vspyshka_192223_1920x1080.jpg'); /* Путь к фоновому изображению */
+  background-color: #c7b39b; /* Цвет фона */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family:Impact, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+body {
+  margin: 0;
+  font-family: Impact,-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+
+}
+
+/* .Video_Background{
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+} */
+
+.nav ul{
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+.nav li link{
+  text-shadow: 3px 1px 1px 1px  black ;
 }
