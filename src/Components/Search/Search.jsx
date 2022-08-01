@@ -2,38 +2,33 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import React, { useState } from "react";
-import CardSearch from "../Main/CardSearch";
-import style from "./style.module.css";
+import CardSearch from "../CardImage/CardSearch";
+import style from "./Search.module.css";
 import { v4 as uuidv4 } from "uuid";
-
 
 export default function Search() {
   const [photos, setPhotos] = useState([]);
   const [inputSearch, setInputSearch] = useState("");
-  console.log(photos);
+
   const searchHandler = async () => {
-    console.log(photos);
     const results = await fetch(
       `https://images-api.nasa.gov/search?media_type=image&q=${inputSearch}`
     );
     const previews = await results.json();
-    console.log(previews);
     setPhotos(await previews.collection.items);
   };
 
-  console.log(photos);
-  console.log(inputSearch);
   const inputHandler = (event) => {
     console.log("event.target.value", event.target.value);
     setInputSearch(event.target.value);
   };
-  console.log(photos);
   return (
     <>
       <div className={style.hello}>
         <h1 className="TitleHome">Hello Earthlings!</h1>
         <p className={style.hello2}>
-        Here you can find photos of our planet, other planets, stars and galaxies!
+          Here you can find photos of our planet, other planets, stars and
+          galaxies!
         </p>
       </div>
       <div className={style.inpPar}>

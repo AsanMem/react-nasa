@@ -1,0 +1,32 @@
+.inpPar{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form{
+  padding-top: 20px;
+  
+  width:450px;
+  height:10px;
+  text-align: center ;
+}
+.hello{
+  font-weight: bold;
+  text-align: center;
+  color: rgb(221, 211, 211);
+  padding-top: 50px;
+ 
+}
+.hello2{
+  font-size:x-large;
+}
+
+.videoGallery{
+  display: flex;
+  flex-wrap: wrap;
+   align-content: space-around;
+   justify-content: space-evenly;
+   align-items: stretch;
+   padding-top:140px;
+}

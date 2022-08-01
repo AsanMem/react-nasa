@@ -1,8 +1,4 @@
-/* .img{
- width:400px;
- height:470px;
- object-fit: cover !important;
-}
+
 
 .inpPar{
   display: flex;
@@ -26,17 +22,7 @@
 .hello2{
   font-size:x-large;
 }
-.contener{
-  
-  width:400px;
-  padding-top: 50px;
-  border-color:black !important;
-  border-radius:'1px';
-  margin-bottom:'.5rem';
 
-  margin: 5px;
-
-}
 .parent{
   display: flex;
   flex-wrap: wrap;
@@ -44,7 +30,7 @@
   justify-content: space-evenly;
   align-items: stretch;
 
-} */
+}
 
 
 /* .bod{

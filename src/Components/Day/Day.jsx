@@ -20,7 +20,7 @@ export default function Day() {
   
    return (
      <>
-<h3 className={style.date1}><p>Сегодня {photoData.date} число,встречайте этот прекрасный снимок </p> </h3>
+<h3 className={style.date1}><p>Today is {photoData.date}, which means meet this beautiful snapshot of the day </p> </h3>
 <h3 className={style.date2}><p>{photoData.title}</p></h3>
 <div className={style.day}>
 <img className={style.photo}

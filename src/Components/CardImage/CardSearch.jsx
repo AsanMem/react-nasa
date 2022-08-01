@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
-import style from "./style.module.css";
+import style from "./CardSearch.module.css";
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 
@@ -32,7 +32,7 @@ export default function CardSearch({ nasaPicture, title, description }) {
         aria-labelledby="example-custom-modal-styling-title"
         className="Modal"
       >
-        <img src={nasaPicture} />
+        <img src={nasaPicture} alt='thispicture'/>
         <div className="Modal">
           <h1>{title}</h1>
           <h6>{description}</h6>
@@ -41,3 +41,5 @@ export default function CardSearch({ nasaPicture, title, description }) {
     </>
   );
 }
+
+
