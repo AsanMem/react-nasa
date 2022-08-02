@@ -1,35 +1,32 @@
-import React,{useState} from 'react'
+import React, { useState } from "react";
 import style from "./SearchVideo.module.css";
-import VideoPreview from './VideoPreview';
-import {Button,Form,InputGroup} from "react-bootstrap";
+import VideoPreview from "./VideoPreview";
+import { Button, Form, InputGroup } from "react-bootstrap";
+import { v4 as uuidv4 } from "uuid";
 
-
-
-export default function SearchVideo({items, collection}) {
+export default function SearchVideo({ items, collection }) {
   const [search, setSearch] = useState("");
-    const [videos, setVideos] = useState(items, collection);
+  const [videos, setVideos] = useState(items, collection);
 
-const searchHandler = async() => {
-  const results = await fetch(
-    `https://images-api.nasa.gov/search?q=${search}&page=1&media_type=video`
-  );
- 
- 
-  const videosSearch = await results.json();
-
-  setVideos( videosSearch.collection.items);
-}
+  const searchHandler = async () => {
+    const results = await fetch(
+      `https://images-api.nasa.gov/search?q=${search}&page=1&media_type=video`
+    );
+    const videosSearch = await results.json();
+    setVideos(videosSearch.collection.items);
+  };
 
   return (
     <>
-    <div className={style.hello}>
+      <div className={style.hello}>
         <h1 className="TitleHome">Earthlings!</h1>
         <p className={style.hello2}>
-        Here you can find videos about our planet, about other planets, stars and galaxies!
+          Here you can find videos about our planet, about other planets, stars
+          and galaxies!
         </p>
       </div>
       <div className={style.inpPar}>
-      <InputGroup
+        <InputGroup
           className={style.form}
           onChange={(e) => setSearch(e.target.value)}
           type="text"
@@ -49,54 +46,22 @@ const searchHandler = async() => {
             SEARCH
           </Button>
         </InputGroup>
-      
-    
-    </div>
-    
+      </div>
+
       <div className={style.videoGallery}>
         {videos &&
-          videos.map((vid)  => (
+          videos.map((videoElem) => (
             <VideoPreview
-              key={vid.data[0].title}
-              videoPreview={vid.links[0].href}
-              videoPlay={vid.links[1].href}
-              title={vid.data[0].title}
-              description={vid.data[0].description}
-              nasaId={vid.data[0].nasa_id}
+              key={uuidv4(videoElem.data[0].title)}
+              videoPreview={videoElem.links[0].href}
+              videoPlay={videoElem?.links[1]?.href}
+              title={videoElem.data[0].title}
+              description={videoElem.data[0].description}
+              nasaId={videoElem.data[0].nasa_id}
             />
-          ))
-          }
+          ))}
       </div>
-    
-    
     </>
-
-  )
+  );
 }
 
-// onClick={async () => {
-//   const results = await fetch(
-//     `https://images-api.nasa.gov/search?q=${search}&page=1&media_type=video`
-//   );
- 
- 
-//   const videosSearch = await results.json();
-
-//   setVideos( videosSearch.collection.items);
-
-  
-// }}
-{/* <input
-className={style.form}
-id="nasaSearch"
-onChange={(e) => setSearch(e.target.value)}
-type="text"
-placeholder="Search for an video"
-></input>
-<button
-className="button"
-disabled={search === ""}
-onClick={searchHandler}
->
-Search
-</button> */}

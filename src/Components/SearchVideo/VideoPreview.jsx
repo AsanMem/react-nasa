@@ -2,17 +2,17 @@
 import React, { useState } from "react";
 import Modal from 'react-bootstrap/Modal';
 import ReactPlayer from 'react-player';
-export default function VideoPreview({ videoPreview, videoPlay, title, description,vid}) {
-  const [show, setShow] = useState(false);
-  const proba = "https://images-assets.nasa.gov/video/GSFC_20110617_LRO_m10794_Eclipse_Librating_Moon/GSFC_20110617_LRO_m10794_Eclipse_Librating_Moon~orig.mp4"
+import style from "./SearchVideo.module.css";
 
+export default function VideoPreview({ videoPreview, videoPlay, title, description}) {
+  const [show, setShow] = useState(false);
+  const defaultVideo = "https://images-assets.nasa.gov/video/GSFC_20110617_LRO_m10794_Eclipse_Librating_Moon/GSFC_20110617_LRO_m10794_Eclipse_Librating_Moon~orig.mp4"
   return (
-    <main className="grid">
-    <div className="responsive" >  
-    <div className="galleryVideo">       
-          <img src={videoPreview} className="Img_Grid" onClick={() => setShow(true)}/>
-          <div className="desc">{title}</div> 
-    </div>
+    <div className={style.videoContainer}>
+    <div className={style.galleryVideo}>       
+          <img src={videoPreview} alt={'videoPreview'} className="Img_Grid" onClick={() => setShow(true)}/>
+          <p className={style.title}>{(title.length < 20 ? title : title.slice(0,20) + '\n' + title.slice(20))}</p> 
+    
     </div>
     <Modal
         show={show}
@@ -22,17 +22,18 @@ export default function VideoPreview({ videoPreview, videoPlay, title, descripti
         className="Modal"
        >
             <ReactPlayer 
-            url= {`${videoPlay.slice(0,-4)}~orig.mp4`}
+            url= {(videoPlay ? `${videoPlay.slice(0,-4)}~orig.mp4` : defaultVideo)}
             width='100%'
             height='100%'
             controls
             playing
             />
-          <div className="container-Modal">
-          <h1 className="Title_Modal">{title}</h1>
-          <p className="description_Modal">{description}</p>
+          <div className="containerModal">
+          <h1 className="titleModal">{title}</h1>
+          <p className="descriptionModal">{description}</p>
           </div>
       </Modal>
-  </main>
+  </div>
   );
 }
+

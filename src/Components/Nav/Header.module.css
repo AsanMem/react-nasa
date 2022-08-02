@@ -1,17 +1,5 @@
-/* .containerFluid{
-  display: flex;
-  align-items: center;
-  flex-shrink: 2;
-} */
 
-/* .navLinks{
-padding-left: 25%;
-margin-left: 33%;
-} */
-
-/* @import url('https://fonts.googleapis.com/css?family=Arimo'); */
 .topMenu {
-  /* background: rgba(255,255,255,.5); */
   box-shadow: 3px 0 7px rgba(0,0,0,.3);
   padding: 20px;
 }
@@ -20,7 +8,9 @@ margin-left: 33%;
   display: table;
   clear: both;
 }
+
 .logo {display: inline-block;}
+
 .menuMain {
   list-style: none;
   margin: 0;
@@ -28,6 +18,7 @@ margin-left: 33%;
   float: right;
 }
 .menuMain li {display: inline-block;}
+
 .menuMain a {
   text-decoration: none;
   display: block;
@@ -36,8 +27,6 @@ margin-left: 33%;
   padding-left: 20px;
   font-size: 18px;
   letter-spacing: 2px;
-  /* font-family: 'Arimo', sans-serif;
-  font-weight: bold; */
   color: #F73E24;
   transition:.3s linear;
 }

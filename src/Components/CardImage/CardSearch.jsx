@@ -10,7 +10,7 @@ export default function CardSearch({ nasaPicture, title, description }) {
   return (
     <>
       <CardGroup className={style.contener}>
-        <Card>
+        <Card style={{ "background-color": "#000" }}>
           <Card.Img
             className={style.img}
             variant="top"
@@ -19,9 +19,6 @@ export default function CardSearch({ nasaPicture, title, description }) {
           />
           <Card.Body className={style.bod}>
             <Card.Title className={style.title}>{title} </Card.Title>
-            {/* <Card.Text>
-          {description}
-          </Card.Text> */}
           </Card.Body>
         </Card>
       </CardGroup>
@@ -32,7 +29,7 @@ export default function CardSearch({ nasaPicture, title, description }) {
         aria-labelledby="example-custom-modal-styling-title"
         className="Modal"
       >
-        <img src={nasaPicture} alt='thispicture'/>
+        <img src={nasaPicture} alt="thispicture" />
         <div className="Modal">
           <h1>{title}</h1>
           <h6>{description}</h6>
@@ -41,5 +38,3 @@ export default function CardSearch({ nasaPicture, title, description }) {
     </>
   );
 }
-
-

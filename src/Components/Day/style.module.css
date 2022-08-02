@@ -2,7 +2,7 @@
   display: flex;
 }
 .textDay{
-  font-family: 'Courier New', Courier, monospace;
+ font-family: 'Courier New', Courier, monospace;
  color: rgb(253, 245, 245);
  font-size: large;
  font-weight: bold;
@@ -36,10 +36,6 @@
   padding: 40px;
   margin: 0 auto;
   max-height: 100%;
-}
-
-.Photo_Day img {
-
 }
 
 .Photo_Day h1 {

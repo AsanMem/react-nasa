@@ -19,7 +19,7 @@ export default function Header() {
       <ul className={style.menuMain}>
         <li>
           <Link to="/" aria-current="page">
-            Search
+          gallery
           </Link>
         </li>
         <li>
